@@ -18,6 +18,8 @@ features<-read.table("./UCI HAR Dataset/features.txt")
 dataset<-rbind(test_set, training_set)
 #rename the column names using list of features. 
 colnames(dataset)<-as.character(features[[2]])
+
+#Step 2. 
 #extract the measurements on the mean for each measurement
 subset_mean<-dataset[,grep("-mean()",colnames(dataset),fixed=TRUE)]
 #extract the measurements on standard deviation for each measurement
@@ -29,11 +31,11 @@ activity<-rbind(test_labels,training_labels)
 colnames(activity)<-"activity"
 subset<-cbind(subjects,activity,subset_mean,subset_std) 
 
-# Step 2. 
+# Step 3. 
 #Uses descriptive activity names to name the activities in the data set
 subset$activity<-factor(subset$activity,level=1:6,labels=activity_labels[[2]])
 
-#Step 3. 
+#Step 4. 
 #Appropriately labels the data set with descriptive variable names
 #t means time domain
 colnames(subset)<-gsub("^t","SignalFromTimeDomain",colnames(subset))
@@ -47,7 +49,7 @@ colnames(subset)<-gsub("-X","-in X direction",colnames(subset),fixed=TRUE)
 colnames(subset)<-gsub("-Y","-in Y direction",colnames(subset),fixed=TRUE)
 colnames(subset)<-gsub("-Z","-in Z direction",colnames(subset),fixed=TRUE)
 
-#Step 4 
+#Step 5
 #From the data set in step 4, creates a second, independent tidy data set with 
 #the average of each variable for each activity and each subject.
 library(plyr)
