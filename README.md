@@ -1,12 +1,11 @@
-coursera_class_getting_and_cleaning_data_courseproject
-======================================================
-
 Coursera Class #2: Course Project 
+==================================
 
 The packages **plyr** and **dplyr** are required for this script. It is assumed that the 
  UCI HAR Dataset folder has already been downloaded to the working directory. 
  
- The script is started with reading all necessary files into R:
+ Step 0. The script is started with reading all necessary files into R:
+ ================
  
 - 'features.txt': List of all features.--stored as *features*
 
@@ -35,9 +34,7 @@ Step 1. Merge test and training sets to create on data set
 - Subset the variable names(column names) from *features* dataset and rename the
   column names of the *dataset*
 
-Step 2. Extracts only the measurements on the mean and standard deviation for
-==============================================================================
-each measurement. 
+Step 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 =============================================================================
 - Using **grep** function to extract the measurements on the mean for each
    measurement first and stored as-*subset_mean*. Using -mean() as the pattern to
@@ -70,9 +67,7 @@ names. function **gsub**are used.
 - change mean to mean value
 - cange -X, -Y, -Z to in X/Y/Z direction
 
-Step 5. From the data set in step 4, creates a second, independent tidy data set
-==============================================================================
-with the average of each variable for each activity and each subject.
+Step 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 ===========================================================================
 
 - Used package plyr and dply and function **group_by**and **summarise_each** and 
