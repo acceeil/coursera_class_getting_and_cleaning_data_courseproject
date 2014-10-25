@@ -38,7 +38,7 @@ subset$activity<-factor(subset$activity,level=1:6,labels=activity_labels[[2]])
 #Step 4. 
 #Appropriately labels the data set with descriptive variable names
 #t means time domain
-colnames(subset)<-gsub("^t","SignalFromTimeDomain",colnames(subset))
+colnames(susbset)<-gsub("^t","SignalFromTimeDomain",colnames(subset))
 colnames(subset)<-gsub("^f","SignalFromFrequencyDomain",colnames(subset))
 colnames(subset)<-gsub("Acc","Accelerometer",colnames(subset))
 colnames(subset)<-gsub("Gyro","Gyroscope",colnames(subset))
@@ -55,3 +55,4 @@ colnames(subset)<-gsub("-Z","-in Z direction",colnames(subset),fixed=TRUE)
 library(plyr)
 library(dplyr)
 subset2<-summarise_each(group_by(subset, subject, activity),funs(mean))
+View(subset2)
