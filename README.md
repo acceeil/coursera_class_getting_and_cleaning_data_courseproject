@@ -3,6 +3,7 @@ Coursera Class #2: Course Project
 
 The packages **plyr** and **dplyr** are required for this script. It is assumed that the 
  UCI HAR Dataset folder has already been downloaded to the working directory. 
+
  
 Step 0. The script is started with reading all necessary files into R
 ======================================================================
@@ -28,7 +29,7 @@ Step 0. The script is started with reading all necessary files into R
   
 Step 1. Merge test and training sets
 ===================================================================
-- Used the rbind fouction to combine the test and training datasets and stored it
+- Use the **rbind** fouction to combine the test and training datasets and stored
   as dataset--stored as *dataset*
   
 - Subset the variable names(column names) from *features* dataset and rename the
@@ -69,6 +70,7 @@ names. function  **gsub** are used.
 Step 5. Independent tidy data set with the average of each variable for each activity and each subject.
 ===========================================================================
 
-- Used package plyr and dply and function **group_by** and **summarise_each** and 
-and stored as *subset2*
+- Used package plyr and dply and function **group_by** and **summarise_each**
+and stored the tidy data as *subset2*
+
 
